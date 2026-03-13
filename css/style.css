@@ -2,13 +2,13 @@
 
 /* 폰트 */
 @font-face {
-    font-family: cute;
-    src: url(../fonts/PopRumKiwi-Telop.ttf);
+    font-family: 'cute';
+    src: url('../fonts/PopRumKiwi-Telop.ttf');
 }
 
 @font-face {
-    font-family: gothic;
-    src: url(../fonts/NanumBarunGothicBold.ttf);
+    font-family: 'gothic';
+    src: url('../fonts/NanumBarunGothicBold.ttf');
 }
 
 * {
@@ -29,7 +29,7 @@ html {
 header {
     max-width: 100%;
     height: 100px;
-    box-shadow: 0 5px 20px #ddd;
+    box-shadow: 0 5px 20px #dddddd;
     padding: 0 1rem;
     display: flex;
     align-items: center;
@@ -41,7 +41,7 @@ header {
 
 header ul {
     list-style: none;
-    font-family: cute;
+    font-family: 'cute';
     display: flex;
     justify-content: space-evenly;
     text-align: center;
@@ -55,7 +55,7 @@ header ul {
 
 header ul li {
     white-space: nowrap;
-    padding: 0px 10px;
+    padding: 0 10px;
     flex: 1;
     min-width: max-content;
 }
@@ -92,6 +92,7 @@ iframe {
     height: auto;
     aspect-ratio: 16 / 9;
     border-radius: 12px;
+    border: none;
 }
 
 .container3 {
@@ -103,7 +104,7 @@ iframe {
 
 .aboutme {
     font-size: 2rem;
-    font-family: cute;
+    font-family: 'cute';
     color: #cbb1d9;
     margin-top: 100px;
 }
@@ -131,9 +132,9 @@ iframe {
     margin-top: 20px;
     width: 100%;
     max-width: 360px;
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .myphoto {
@@ -145,8 +146,8 @@ iframe {
 .edu1 {
     padding: 1rem 0;
     font-size: 1.5rem;
-    font-family: cute;
-    color: black;
+    font-family: 'cute';
+    color: #000000;
 }
 
 .introduce {
@@ -170,7 +171,6 @@ span {
     height: auto !important;
     min-height: 700px;
     gap: 20px;
-    clear: both;
 }
 
 .container4 .ab,
@@ -203,7 +203,7 @@ span {
 
 .container4 .ab div,
 .container4 .ty div {
-    font-family: cute;
+    font-family: 'cute';
     font-size: 1.5rem;
     width: 100%;
     height: auto;
@@ -247,22 +247,28 @@ span {
 
 .search {
     margin-right: auto;
-    font-family: gothic;
+    font-family: 'gothic';
     font-size: 1.5rem;
 }
 
 .mail {
-    font-family: cute;
+    font-family: 'cute';
     font-size: 4rem;
+}
+
+/* --- 편지 봉투와 click! 정렬 관련 수정 --- */
+.contact a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 40px;
 }
 
 .fa-envelope {
     color: #cbb1d9;
     font-size: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
 }
 
 .fa-envelope:hover::before {
@@ -273,7 +279,6 @@ span {
 .fa-copy {
     cursor: pointer;
     font-size: 3rem;
-
 }
 
 #home,
@@ -288,29 +293,28 @@ span {
     color: #cbb1d9;
 }
 
-.fa-envelope p {
-
+.click {
     font-size: 2rem;
-    font-family: cute;
-    text-align: center;
-    width: 100%; 
-    margin: 0 auto;
+    font-family: 'cute';
+    background-color: transparent;
+    color: #cbb1d9;
+    margin-top: 10px;
+    /* 아이콘과 글자 사이 간격 추가 */
 }
 
 footer {
     text-align: center;
     padding: 3rem 0;
-    font-family: gothic;
+    font-family: 'gothic';
     font-size: 1rem;
     background-color: #cbb1d9;
 }
 
 /* 애니메이션 */
-
 .dongle-e {
     display: flex;
     justify-content: flex-end;
-    padding: 0 5% 0px 0;
+    padding: 0 5% 0 0;
     width: 100%;
     margin-bottom: -10px;
 }
@@ -319,14 +323,13 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
 
 .dongle {
     width: 80px;
     height: 80px;
     transform-origin: bottom center;
-    animation: jump 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite
+    animation: jump 0.8s ease-out infinite;
 }
 
 .shadow {
@@ -339,75 +342,46 @@ footer {
 }
 
 @keyframes jump {
-    0% {
-        transform: translateY(0) scale(1.2, 0.8); 
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1.2, 0.8);
     }
 
-    20% {
-        transform: translateY(-50px) scale(0.9, 1.1); 
+    20%,
+    80% {
+        transform: translateY(-50px) scale(0.9, 1.1);
     }
 
     50% {
-        transform: translateY(-70px) scale(1, 1); 
-    }
-
-    80% {
-        transform: translateY(-50px) scale(0.95, 1.05); 
-    }
-
-    100% {
-        transform: translateY(0) scale(1.2, 0.8); 
+        transform: translateY(-70px) scale(1, 1);
     }
 }
+
 @keyframes shadow {
-    0% {
+
+    0%,
+    100% {
         transform: scale(1.2, 1);
         opacity: 1;
-    }
-
-    20% {
-        transform: scale(0.8, 1);
-        opacity: 0.8;
     }
 
     50% {
         transform: scale(0.4, 1);
         opacity: 0.2;
     }
-
-    80% {
-        transform: scale(0.7, 1);
-        opacity: 0.7;
-    }
-
-    100% {
-        transform: scale(1.2, 1);
-        opacity: 1;
-    }
 }
 
 /* 반응형 */
-@media (max-width: 1040px) {
-
+@media screen and (max-width: 1040px) {
     .mail {
         font-size: 3rem;
     }
-     .fa-envelope p {
-        text-align: center;
-    }
-
 }
 
-@media (max-width: 768px) {
-    .menu {
-        display: none;
-    }
+@media screen and (max-width: 768px) {
 
-    .container {
-        min-width: 100%;
-        justify-content: center;
-    }
-
+    .menu,
     header ul li {
         display: none;
     }
@@ -418,6 +392,7 @@ footer {
 
     .container {
         min-width: 100%;
+        justify-content: center;
     }
 
     .container2,
@@ -461,15 +436,11 @@ footer {
 
     .fa-envelope {
         font-size: 3rem;
-        width: 100%; 
-        justify-content: center; 
     }
 
+    /* width, justify-content 속성 제거됨 */
     .fa-envelope p {
-        text-align: center;
-        width: 100%; 
-        margin: 0 auto;
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
     }
 
     .aboutme {
@@ -483,33 +454,16 @@ footer {
     .myphoto {
         width: 15rem;
     }
-
 }
 
-
-
-
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     header {
-        padding: 0 0.5rem;
         height: 70px;
-    }
-
-    .menu {
-        display: none;
-    }
-
-    header ul li {
-        display: none;
+        padding: 0 0.5rem;
     }
 
     .sion {
         width: 7rem;
-    }
-
-    .on {
-        width: 70px;
-        height: 35px;
     }
 
     .tape {
@@ -520,7 +474,6 @@ footer {
         width: 13rem;
     }
 
-
     .name,
     .edu1 {
         font-size: 1.3rem;
@@ -528,8 +481,8 @@ footer {
 
     .introduce,
     .edu2 {
-        word-break: keep-all;
         font-size: 0.9rem;
+        word-break: keep-all;
     }
 
     .container4 .ab div,
@@ -550,6 +503,10 @@ footer {
         font-size: 2.5rem;
     }
 
+    .click {
+        font-size: 1rem;
+    }
+
     footer p {
         font-size: 0.9rem;
     }
@@ -562,38 +519,9 @@ footer {
     .shadow {
         width: 25px;
         height: 5px;
-        margin-top: -2px;
-    }
-
-    .fa-envelope p {
-        font-size: 1rem;
-        font-family: cute;
     }
 
     .fa-copy {
         font-size: 1rem;
-    }
-}
-
-@media (max-width: 360px) {
-    .menu {
-        display: none;
-    }
-
-    header ul li {
-        display: none;
-    }
-
-    .fa-envelope {
-        font-size: 2rem;
-    }
-
-    .fa-envelope p {
-        font-size: 0.8rem;
-        font-family: cute;
-    }
-
-    .fa-copy {
-        font-size: 0.8rem;
     }
 }

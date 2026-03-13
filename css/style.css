@@ -525,3 +525,25 @@ footer {
         font-size: 1rem;
     }
 }
+@media (max-width: 360px) {
+    .menu {
+        display: none;
+    }
+
+    header ul li {
+        display: none;
+    }
+
+    .fa-envelope {
+        font-size: 2rem;
+    }
+
+    .fa-envelope p {
+        font-size: 0.8rem;
+        font-family: cute;
+    }
+
+    .fa-copy {
+        font-size: 0.8rem;
+    }
+}

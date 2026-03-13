@@ -1,0 +1,549 @@
+@charset "utf-8";
+
+/* 폰트 */
+@font-face {
+    font-family: 'cute';
+    src: url('../fonts/PopRumKiwi-Telop.ttf');
+}
+
+@font-face {
+    font-family: 'gothic';
+    src: url('../fonts/NanumBarunGothicBold.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('../images/png1.png') 15 15, auto;
+}
+
+*:active {
+    cursor: url('../images/png2.png') 15 15, auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+header {
+    max-width: 100%;
+    height: 100px;
+    box-shadow: 0 5px 20px #dddddd;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+header ul {
+    list-style: none;
+    font-family: 'cute';
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.menu {
+    display: flex;
+    flex-grow: 3;
+}
+
+header ul li {
+    white-space: nowrap;
+    padding: 0 10px;
+    flex: 1;
+    min-width: max-content;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.sion {
+    width: 10rem;
+    height: 3rem;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.container2,
+.container3,
+.container4,
+.container5 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    border: none;
+}
+
+.container3 {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    min-height: 700px;
+}
+
+.aboutme {
+    font-size: 2rem;
+    font-family: 'cute';
+    color: #cbb1d9;
+    margin-top: 100px;
+}
+
+.bigbox {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.box2 {
+    margin-top: 60px;
+    margin-left: 60px;
+    flex: 1;
+}
+
+.tape {
+    width: 14rem;
+    z-index: 9;
+    text-align: center;
+    margin-bottom: -30px;
+}
+
+.photo {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myphoto {
+    width: 100%;
+    height: auto;
+}
+
+.name,
+.edu1 {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-family: 'cute';
+    color: #000000;
+}
+
+.introduce {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+span {
+    background-color: #cbb1d9;
+}
+
+.edubox {
+    margin-top: 50px;
+}
+
+.container4 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    height: auto !important;
+    min-height: 700px;
+    gap: 20px;
+}
+
+.container4 .ab,
+.container4 .ty {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    min-width: 300px;
+}
+
+.container4 .ab div iframe,
+.container4 .ty div iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.text-overlay {
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    color: black;
+    text-shadow: 3px 3px 3px white;
+    pointer-events: none;
+}
+
+.container4 .ab div,
+.container4 .ty div {
+    font-family: 'cute';
+    font-size: 1.5rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    background-color: transparent;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.container4 .ab div:hover,
+.container4 .ty div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container5 {
+    height: auto;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.search {
+    margin-right: auto;
+    font-family: 'gothic';
+    font-size: 1.5rem;
+}
+
+.mail {
+    font-family: 'cute';
+    font-size: 4rem;
+}
+
+/* --- 편지 봉투와 click! 정렬 관련 수정 --- */
+.contact a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 40px;
+}
+
+.fa-envelope {
+    color: #cbb1d9;
+    font-size: 4rem;
+}
+
+.fa-envelope:hover::before {
+    content: "\f2b6";
+    color: #cbb1d9;
+}
+
+.fa-copy {
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+#home,
+#about,
+#project,
+#contact {
+    scroll-margin-top: 200px;
+}
+
+.menu a:hover,
+.menu a.active {
+    color: #cbb1d9;
+}
+
+.click {
+    font-size: 2rem;
+    font-family: 'cute';
+    background-color: transparent;
+    color: #cbb1d9;
+    margin-top: 10px;
+    /* 아이콘과 글자 사이 간격 추가 */
+}
+
+footer {
+    text-align: center;
+    padding: 3rem 0;
+    font-family: 'gothic';
+    font-size: 1rem;
+    background-color: #cbb1d9;
+}
+
+/* 애니메이션 */
+.dongle-e {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 5% 0 0;
+    width: 100%;
+    margin-bottom: -10px;
+}
+
+.dongle-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dongle {
+    width: 80px;
+    height: 80px;
+    transform-origin: bottom center;
+    animation: jump 0.8s ease-out infinite;
+}
+
+.shadow {
+    width: 50px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    margin-top: -5px;
+    animation: shadow 0.8s ease-out infinite;
+}
+
+@keyframes jump {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1.2, 0.8);
+    }
+
+    20%,
+    80% {
+        transform: translateY(-50px) scale(0.9, 1.1);
+    }
+
+    50% {
+        transform: translateY(-70px) scale(1, 1);
+    }
+}
+
+@keyframes shadow {
+
+    0%,
+    100% {
+        transform: scale(1.2, 1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.4, 1);
+        opacity: 0.2;
+    }
+}
+
+/* 반응형 */
+@media screen and (max-width: 1040px) {
+    .mail {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .menu,
+    header ul li {
+        display: none;
+    }
+
+    header {
+        justify-content: space-between;
+    }
+
+    .container {
+        min-width: 100%;
+        justify-content: center;
+    }
+
+    .container2,
+    .container3,
+    .container4,
+    .container5 {
+        margin: 40px auto !important;
+        min-height: auto;
+    }
+
+    .bigbox {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .box2 {
+        margin-left: 0;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .container4 .ab,
+    .container4 .ty {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .container4 .ab div,
+    .container4 .ty div {
+        height: auto;
+    }
+
+    .search {
+        font-size: 1rem;
+    }
+
+    .mail {
+        font-size: 2rem;
+    }
+
+    .fa-envelope {
+        font-size: 3rem;
+    }
+
+    /* width, justify-content 속성 제거됨 */
+    .fa-envelope p {
+        font-size: 1.5rem;
+    }
+
+    .aboutme {
+        text-align: center;
+    }
+
+    .fa-copy {
+        font-size: 2rem;
+    }
+
+    .myphoto {
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        height: 70px;
+        padding: 0 0.5rem;
+    }
+
+    .sion {
+        width: 7rem;
+    }
+
+    .tape {
+        width: 8rem;
+    }
+
+    .myphoto {
+        width: 13rem;
+    }
+
+    .name,
+    .edu1 {
+        font-size: 1.3rem;
+    }
+
+    .introduce,
+    .edu2 {
+        font-size: 0.9rem;
+        word-break: keep-all;
+    }
+
+    .container4 .ab div,
+    .container4 .ty div {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    .search {
+        font-size: 0.9rem;
+    }
+
+    .mail {
+        font-size: 1.5rem;
+    }
+
+    .fa-envelope {
+        font-size: 2.5rem;
+    }
+
+    .click {
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    .dongle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .shadow {
+        width: 25px;
+        height: 5px;
+    }
+
+    .fa-copy {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 360px) {
+    .menu {
+        display: none;
+    }
+
+    header ul li {
+        display: none;
+    }
+
+    .fa-envelope {
+        font-size: 2rem;
+    }
+
+    .fa-envelope p {
+        font-size: 0.8rem;
+        font-family: cute;
+    }
+
+    .fa-copy {
+        font-size: 0.8rem;
+    }
+}

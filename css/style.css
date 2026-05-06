@@ -196,7 +196,7 @@ span {
     position: relative;
     z-index: 2;
     background-color: transparent;
-    color: black;
+    color: #cbb1d9;
     text-shadow: 3px 3px 3px white;
     pointer-events: none;
 }
